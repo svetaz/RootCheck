@@ -30,7 +30,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static studio.kucuela.rootcheck.MainActivity.RootUtil.checkRootMethod3;
+
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -147,24 +147,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView yes = (ImageView)findViewById(R.id.root);
         TextView text = (TextView)findViewById(R.id.text1);
 
-        if (checkRootMethod3()==false){
+        if (findBinary("su")==false){
 
             neutral.setVisibility(View.INVISIBLE);
             not.setVisibility(View.VISIBLE);
             Technique.ROTATE.getComposer().duration(1000).delay(0).playOn(not);
             Technique.SWING.getComposer().duration(1000).delay(0).playOn(text);
-            text.setText("Your device is not rooted\n(click on a image to start again)");
+            text.setText("Your device is not rooted!\n(click on the image to start again)");
 
 
         }
 
-        if (checkRootMethod3()==true){
+        if (findBinary("su")==true){
 
             neutral.setVisibility(View.INVISIBLE);
             yes.setVisibility(View.VISIBLE);
             Technique.ROTATE.getComposer().duration(1000).delay(0).playOn(yes);
             Technique.SWING.getComposer().duration(1000).delay(0).playOn(text);
-            text.setText("Your device is rooted\n(click on a image to start again)");
+            text.setText("Your device is rooted\n(click on the image to start again)");
 
 
         }
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         not.setVisibility(View.INVISIBLE);
         Technique.ROTATE.getComposer().duration(1000).delay(0).playOn(neutral);
         Technique.SWING.getComposer().duration(1000).delay(0).playOn(text);
-        text.setText("Click on a image to check for root");
+        text.setText("Click on the image to check for root");
 
     }
 
@@ -197,13 +197,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         yes.setVisibility(View.INVISIBLE);
         Technique.ROTATE.getComposer().duration(1000).delay(0).playOn(neutral);
         Technique.SWING.getComposer().duration(1000).delay(0).playOn(text);
-        text.setText("Click on a image to check for root");
+        text.setText("Click on the image to check for root");
 
     }
 
 
 
-    /** @author Kevin Kowalewski */
+    /** @author Kevin Kowalewski *//*
     public static class RootUtil {
         public static boolean isDeviceRooted() {
             return checkRootMethod1() || checkRootMethod2() || checkRootMethod3();
@@ -236,6 +236,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (process != null) process.destroy();
             }
         }
+    }*/
+
+    private static boolean isRooted() {
+        return findBinary("su");
+    }
+
+
+
+    public static boolean findBinary(String binaryName) {
+        boolean found = false;
+        if (!found) {
+            String[] places = {"/sbin/", "/system/bin/", "/system/xbin/", "/data/local/xbin/",
+                    "/data/local/bin/", "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
+            for (String where : places) {
+                if ( new File( where + binaryName ).exists() ) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        return found;
     }
 
 
