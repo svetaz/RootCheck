@@ -1,0 +1,7 @@
+# RootCheck
+
+A simple app made to help you determine whether your device is rooted or not
+
+APK: https://app.box.com/s/0h93o1j34828qkos8ge3d5b6mqz3l062
+
+![Alt text](https://public.boxcloud.com/api/2.0/internal_files/259391516891/versions/273346014875/representations/jpg_paged_2048x2048/content/1.jpg?access_token=1!G5IKruMaQBs9OeUVMORPq3XpN-yjCk36_PYc7CtmISIRrq5wLPxCtsJO1rOpXSGM4-mASC9ACvZIdN8jOZczJ7qtnA5bGRSA8WUa68BMdyBICseGxfgeNvpPX2VoplWS5A03UM4IAILyBOW-hU_fNK1KnfUNsITEt7GRSOfh8JQBJOh0W54oNmijrHVt4RTtENTBxRsK91uTNoD0hqBvULW61tBdYM2gfDjkrVMx3Htzyd2bXD1jX2Cx08hPa9HyO-t1hRzpw24RuJy3rCJvgZzMYJXnRH_2a2GSKzAGTvn4WVlxwKmDGkAmbzLh4ZHPw7ZEr3yx34zHYkogIh4gsz9n1z2YMRXbmbt094riVg7r3b2JGhbxmrSDwPy7O1tJL-ii3GVZoLKCP8OO&box_client_name=box-content-preview&box_client_version=1.23.1)
